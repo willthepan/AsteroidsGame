@@ -33,3 +33,9 @@ void keyPressed() {
 void keyReleased() {
   if (keyCode == UP) ship.setThrusting(false);
 }
+<footer>
+  Use the arrow keys to control your spaceship:<br>
+  &nbsp;&nbsp;Press UP to accelerate<br>
+  &nbsp;&nbsp;Press LEFT or RIGHT to rotate<br>
+  &nbsp;&nbsp;Press H for hyperspace<br>
+</footer>
