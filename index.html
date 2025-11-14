@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-	<head>
-		<meta charset="utf-8">
-		<title>Title</title>
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="styles.css">
-		<script src="processing.js"></script>
-	</head>
-	<body>
-		<header>
-			<h1>Header</h1>
-		</header>
-			<section id="content">
-				<canvas id="AsteroidsGame" data-processing-sources="AsteroidsGame.pde Floater.pde Spaceship.pde Star.pde">
-				</canvas>
-		    </section>
-	 <footer>
-  Use the arrow keys to control your spaceship:<br>
-  &nbsp;&nbsp;Press UP to accelerate<br>
-  &nbsp;&nbsp;Press LEFT or RIGHT to rotate<br>
-  &nbsp;&nbsp;Press H for hyperspace<br>
-</footer>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Asteroids Game</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles.css">
+    <script src="processing.js"></script>
+</head>
 
-	</body>
+<body>
+    <header>
+        <h1>Asteroids Game</h1>
+    </header>
+
+    <section id="content">
+        <canvas id="AsteroidsGame" 
+                data-processing-sources="AsteroidsGame.pde Floater.pde Spaceship.pde Star.pde">
+        </canvas>
+    </section>
+
+    <footer style="margin-top:20px; font-size:18px; line-height:1.6;">
+        Use the arrow keys to control your spaceship:<br>
+        &nbsp;&nbsp;• Press <strong>UP</strong> to accelerate<br>
+        &nbsp;&nbsp;• Press <strong>LEFT</strong> or <strong>RIGHT</strong> to rotate<br>
+        &nbsp;&nbsp;• Press <strong>H</strong> for hyperspace<br>
+    </footer>
+</body>
 </html>
