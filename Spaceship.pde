@@ -1,51 +1,63 @@
-class Spaceship extends Floater  
-{   
+class Spaceship extends Floater
+{
   private boolean thrusting;
 
-  public Spaceship() {
+  public Spaceship()
+  {
     corners = 4;
     xCorners = new int[]{16, -8, -2, -8};
     yCorners = new int[]{0, -8, 0, 8};
+
     myColor = color(255);
-    myCenterX = width/2.0;
-    myCenterY = height/2.0;
-    myXspeed = 0.0;
-    myYspeed = 0.0;
-    myPointDirection = 0.0;
+
+    myCenterX = width / 2.0;
+    myCenterY = height / 2.0;
+
+    myXspeed = 0;
+    myYspeed = 0;
+    myPointDirection = 0;
     thrusting = false;
   }
 
-  public void setThrusting(boolean t) {
-    thrusting = t;
-  }
+  public void setThrusting(boolean t) { thrusting = t; }
 
-  public void hyperspace() {
-    myCenterX = Math.random()*width;
-    myCenterY = Math.random()*height;
+  public void hyperspace()
+  {
+    myCenterX = Math.random() * width;
+    myCenterY = Math.random() * height;
     myXspeed = 0;
     myYspeed = 0;
-    myPointDirection = Math.random()*360;
+    myPointDirection = Math.random() * 360;
   }
 
-  public void show() {
+  public double getX() { return myCenterX; }
+  public double getY() { return myCenterY; }
+  public double getPointDirection() { return myPointDirection; }
+
+  public void show()
+  {
     pushMatrix();
     translate((float)myCenterX, (float)myCenterY);
-    rotate((float)(myPointDirection * Math.PI/180));
+    rotate((float)(myPointDirection * Math.PI / 180));
+
     fill(myColor);
     stroke(myColor);
     beginShape();
-    for (int i = 0; i < corners; i++) vertex(xCorners[i], yCorners[i]);
+    for (int i = 0; i < corners; i++)
+      vertex(xCorners[i], yCorners[i]);
     endShape(CLOSE);
 
-    if (thrusting) {
-      fill(255, 150, 0);
-      stroke(255, 150, 0);
+    if (thrusting)
+    {
+      fill(255, 158, 0);
+      stroke(255, 158, 0);
       beginShape();
       vertex(-8, -5);
       vertex(-22, 0);
       vertex(-8, 5);
       endShape(CLOSE);
     }
+
     popMatrix();
   }
 }
